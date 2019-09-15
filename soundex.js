@@ -1,8 +1,8 @@
-'use strict'
+'use strict';
 
 var Soundex = function (full, length) {
-    var _full = full;
-    var _length = length;
+    var _full = full || false;
+    var _length = length || 4;
 
     var getCode = function (character) {
         switch (character.toLowerCase()) {
@@ -69,8 +69,7 @@ var Soundex = function (full, length) {
             result.push('0')
         }
 
-        return result;
-
+        return result.join('');
     };
 
     this.isSimilar = function (words) {
